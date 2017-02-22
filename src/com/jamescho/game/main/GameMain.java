@@ -17,11 +17,11 @@ public class GameMain {
         frame.setLayout(new BorderLayout());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(GAME_WIDTH,GAME_HEIGHT);
-        frame.setResizable(false);
-
-        showCrappyUI(frame);
-
+        sGame = new Game(GAME_WIDTH, GAME_HEIGHT);
+        frame.add(sGame);
+        frame.pack();
         frame.setVisible(true);
+
     }
 
     private static void showCrappyUI(JFrame frame) {
@@ -50,6 +50,9 @@ class CrappyPanel extends JPanel {
 
         g.setColor(Color.GREEN);
         g.drawRect(50,50,100,100);
+
+        g.setColor(Color.WHITE);
+        g.fillRect(51,51,99,99);
 
         g.setColor(Color.RED);
         g.drawString("Hello World!", 200, 200);
